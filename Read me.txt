@@ -1,0 +1,199 @@
+==========================================
+==========Hello===========================
+==========================================
+
+********************************************
+***********HTML*****************************
+********************************************
+====>You will find the code here that I add it in my portfolio with CSS layout using grid template areas.
+
+<!-- Boxes Section -->
+    <section class="boxes">
+      <div class="box">
+        <i class="fas fa-chart-pie fa-4x"></i>
+        <h3>Analytics</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-globe fa-4x"></i>
+        <h3>Marketing</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-cog fa-4x"></i>
+        <h3>Development</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-users fa-4x"></i>
+        <h3>Support</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, expedita?</p>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info">
+      <img src="https://image.ibb.co/j4Qz8x/pic1.jpg" alt="">
+      <div>
+        <h2>Your Business On The Web</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias reiciendis deleniti possimus nemo non repellendus?
+          Quae atque vero modi quidem! Autem cupiditate fugit doloribus ad amet, asperiores provident commodi.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio">
+      <img src="https://source.unsplash.com/random/200x200" alt="">
+      <img src="https://source.unsplash.com/random/201x200" alt="">
+      <img src="https://source.unsplash.com/random/202x200" alt="">
+      <img src="https://source.unsplash.com/random/203x200" alt="">
+      <img src="https://source.unsplash.com/random/204x200" alt="">
+      <img src="https://source.unsplash.com/random/205x200" alt="">
+      <img src="https://source.unsplash.com/random/206x200" alt="">
+      <img src="https://source.unsplash.com/random/207x200" alt="">
+      <img src="https://source.unsplash.com/random/208x200" alt="">
+    </section>
+
+
+****************************************************************************************************
+***************************************CSS**********************************************************
+****************************************************************************************************
+/* Top Container */
+.top-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+
+/* Showcase */
+.showcase {
+  grid-area: showcase;
+  min-height: 400px;
+  background: url(https://image.ibb.co/kYJK8x/showcase.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+
+.showcase p {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--light);
+}
+
+/* Top Box */
+.top-box {
+  background: var(--primary);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.top-box .price {
+  font-size: 2.5rem;
+}
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: var(--primary);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Info */
+.info {
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .top-container {
+    grid-template-areas:
+      'showcase showcase'
+      'top-box-a top-box-b';
+  }
+
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .info .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      'showcase'
+      'top-box-a'
+      'top-box-b';
+  }
+}
